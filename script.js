@@ -3,9 +3,7 @@ const msgFi = document.getElementById('msgFi')
 const img = document.getElementById('imgs')
 var audio = document.getElementById("myAudio");
 
-document.addEventListener("load", function() {
-  audio.play();
-});
+audio.play();
 
 function iniMsg(contador){
   msgIn.innerHTML = "Eu Te Amo Muito Nath S2</br>Você é a melhor coisa que me aconteceu!";
