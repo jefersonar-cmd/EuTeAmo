@@ -3,6 +3,10 @@ const msgFi = document.getElementById('msgFi')
 const img = document.getElementById('imgs')
 var audio = document.getElementById("myAudio");
 
+document.addEventListener("load", function() {
+  audio.play();
+});
+
 function iniMsg(contador){
   msgIn.innerHTML = "Eu Te Amo Muito Nath S2</br>Você é a melhor coisa que me aconteceu!";
   img.src = "images/" + contador +".jpeg"
@@ -56,10 +60,6 @@ let intervalo = startInterval();
 
 // Obtém o elemento de áudio e define o volume para 50%
 audio.volume = 0.1;
-
-document.addEventListener('load', function(){
-  audio.play();
-})
 
 // Repete a música quando terminar
 audio.addEventListener('ended', function() {
