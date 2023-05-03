@@ -20,6 +20,7 @@ function fiMsg(contador){
 }
 
 function startInterval() {
+  audio.play();
   let contador = 0;
   let intervalo = setInterval(function() {
     if (contador < 5) {
