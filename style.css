@@ -13,13 +13,15 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 #mensagem, #msgFi, #imgs {
     opacity: 0;
     transition: opacity 2s ease-in-out;
   }
-  #mensagem.show, #msgFi.show, #imgs.show {
+  #mensagem.show, #msgFi.show, #imgs.show, #play.show {
     opacity: 1;
   }
 
@@ -41,3 +43,81 @@ p {
     text-align: center;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+/* Coração button */
+
+#btn {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#play {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+  
+  #play:before,
+  #play:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 25px;
+    height: 42px;
+    background-color: red;
+    border-radius: 25px 25px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  #play:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+  
+  #play:hover:before,
+  #play:hover:after {
+    background-color: #ff3b3b;
+  }
+  
+  #play:hover {
+    animation: heartbeat 1s ease-in-out infinite;
+  }
+  
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.2);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  #play span {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px black;
+  }
+  
+  
